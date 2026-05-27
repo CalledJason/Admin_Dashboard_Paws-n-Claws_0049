@@ -153,16 +153,57 @@
         <div class="container py-4">
             <div class="row justify-content-center align-items-center g-5">
                 <div class="col-lg-6 card pc-card pc-shadow p-5 border-0">
-                    <form id="calcForm"></form>
-                    <div class="row mb-4">
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label fw-bold">Jenis Peliharaan</label>
-                            <select class="form-select" id="petType">
-                                <option value="0" selected disabled>-- Pilih Hewan --</option>
-                                <option value="cat">Kucing&#x1F408;</option>
-                                <option value="dog">Anjing&#128021;</option>
-                            </select>
+                    <h2 class="fw-bold mb-2">Simulasi Estimasi Tarif</h2>
+                    <p class="text-muted mb-4">Pilihan kriteria anabul untuk mengetahui rentang biaya pengerjaan secara transparan.</p>
+
+
+                    <form id="calcForm">
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Jenis Peliharaan</label>
+                                <select class="form-select" id="petType">
+                                    <option value="0" selected disabled>-- Pilih Hewan --</option>
+                                    <option value="cat">Kucing&#x1F408;</option>
+                                    <option value="dog">Anjing&#128021;</option>
+                                </select>
+                            </div>
+                            <div class="cold-md-6 mb-3">
+                                <label class="form-labeb fw-bold">Ukuran Bobot (Size)</label>
+                                <select class="form-select text-muted" id="petSize" disabled>
+                                    <option value="" selected disabled>-- Pilih Bobot --</option>
+                                    <option value="small">Small / Kecil (&lt; 5kg)</option>
+                                    <option value="medium">Medium / Sedang (5kg - 12kg)</option>
+                                    <option value="large">Large / Besar (&gt; 12kg)</option>
+                                </select>
+                            </div>
                         </div>
+
+                        <div class="mb-5 mt-2">
+                            <label class="form-label fw-bold d-block mb-3">Pilih Paket Perawatan</label>
+                            <div class="form-check p-3 border rounded-4 mb-3 bg-light d-flex align-items-center">
+                                <input class="form-check-input ms-2 me-3" type="radio" name="packageRadio" id="pkg1" value="60000" disabled>
+                                <label class="form-check-label fw-bold text-muted" for="pkg1">Signature Bath Only (+Rp 60.000)</label>
+                            </div>
+                            <div class="form-check p-3 border rounded-4 mb-3 bg-light d-flex align-items-center">
+                                <input class="form-check-input ms-2 me-3" type="radio" name="packageRadio" id="pkg2" value="110000" disabled>
+                                <label class="form-check-label fw-bold text-muted" for="pkg2">Premium Haircut & Styling (+Rp 110.000)</label>
+                            </div>
+                            <div class="form-check p-3 border rounded-4 mb-0 bg-light d-flex align-items-center">
+                                <input class="form-check-input ms-2 me-3" type="radio" name="packageRadio" id="pkg3" value="150000" disabled>
+                                <label class="form-check-label fw-bold text-muted" for="pkg3">Spa Medicated Complete (+Rp 150.000)</label>
+                            </div>
+                        </div>
+
+                        <div class="p-4 border-0 rounded4 d-flex justify-content-between align-items-center pc-shadow" style="background-color: var(--pc-peach);">
+                            <span class="fw-bold fs-5">Estimasi Total:</span>
+                            <h3 class="fw-bold mb-0 text-muted" id="totalDisplay">Rp 0</h3>
+                        </div>
+                        <small class="text-danger d-block mt-3 text-center fw-medium" id="warningMsg">*Lengkapi form pilihan di atas untuk menampilkan perhitungan tarif.</small>
+                    </form>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="pc-rounded-box">
+                        <img src="https://i.pinimg.com/1200x/36/88/f8/3688f8c5e191e829b319414689219266.jpg"  class="img-fluid w-100 object-fit-contain" style="border-radius: 30px;"  alt="Interactive Calculator Asset">
                     </div>
                 </div>
             </div>
