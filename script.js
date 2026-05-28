@@ -1,20 +1,17 @@
-$(document).ready(function {
-    $('#petType').change(function() {
-        $(this).removeClass('text-muted');
+$(document).ready(function() {
+    const tarifDasar = {
 
-        $('#petSize').prop('disabled', false);
-        calculateTotal();
-    });
-
-    $('#petSize').change(function() {
-        $(this).removeClass('text-muted');
-        $('input[name=""packageRadio]').prop('disabled', false);
-        calculateTotal();
-    });
-
-    $('input[name=""packageRadio]').chang(function() {
-        calculateTotal();
-    });
+        cat: {
+            small: 40000,
+            medium: 55000,
+            large: 70000
+        },
+        dog: {
+            small: 50000,
+            medium: 75000,
+            large: 100000
+        }
+    };
 
     function calculateTotal() {
         let petType = $('#petType').val();
@@ -22,11 +19,11 @@ $(document).ready(function {
         let packageBasePrice = parseInt($('input[name="packageRadio"]:checked').val()) || 0;
 
         if(!petType || !petSize || packageBasePrice ===0) {
-            $('#warningMsg').removeClass('d-one');
+            $('#warningMsg').removeClass('d-none');
             return;
         }
 
-        $('#warningMsg').addClass('d-one');
+        $('#warningMsg').addClass('d-none');
 
         let sizeMultiplier = 1;
         if(petSize === 'medium') sizeMultiplier = 1.2;
@@ -34,8 +31,35 @@ $(document).ready(function {
 
         let typeBonus = (petType === 'dog') ? 15000 : 0;
         let grandTotal = (packageBasePrice * sizeMultiplier) + typeBonus;
+
+        let formatRupiah = 'Rp' + grandTotal.toLocaleString('id-ID');
+
+        $('#totalDisplay').text(formatRupiah).addClass('text-success').removeClass('text-muted');
     }
 
+    $('#petType').on('change', function() {
+        if ($(this).val() && $(this).val() !== "0") {
+            $('#petSize').prop('disabled', false);
+        } else {
+            
+            $('#petSize').prop('disabled', true).val(''); 
+            $('input[name="packageRadio"]').prop('disabled', true).prop('checked', false);
+        }
+        calculateTotal();
+    });
 
+    $('#petSize').on('change', function() {
+        if ($(this).val() && $(this).val() !== "0") {
+            $('input[name="packageRadio"]').prop('disabled', false);
+        } else {
+            
+            $('input[name="packageRadio"]').prop('disabled', true).prop('checked', false);
+        }
+        calculateTotal();
+    });
+
+    $('#petType, #petSize, input[name="packageRadio"]').on('change', function() {
+        calculateTotal();
+    });
 });
 
