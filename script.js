@@ -20,6 +20,13 @@ $(document).ready(function {
         let petType = $('#petType').val();
         let petSize = $('#petSize').val();
         let packageBasePrice = parseInt($('input[name="packageRadio"]:checked').val()) || 0;
+
+        let sizeMultiplier = 1;
+        if(petSize === 'medium') sizeMultiplier = 1.2;
+        if(petSize === 'large') sizeMultiplier = 1.5;
+
+        let typeBonus = (petType === 'dog') ? 15000 : 0;
+        let grandTotal = (packageBasePrice * sizeMultiplier) + typeBonus;
     }
 
 
