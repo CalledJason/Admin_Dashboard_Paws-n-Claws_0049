@@ -41,8 +41,8 @@
         }
 
         .navbar-nav .nav-link.active {
-        color: #ff9b9b !important;
-        font-weight: 700; 
+            color: #ff9b9b !important; 
+            font-weight: 700; 
         }
 
         .pc-shadow{
