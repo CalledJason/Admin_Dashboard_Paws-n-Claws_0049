@@ -21,6 +21,13 @@ $(document).ready(function {
         let petSize = $('#petSize').val();
         let packageBasePrice = parseInt($('input[name="packageRadio"]:checked').val()) || 0;
 
+        if(!petType || !petSize || packageBasePrice ===0) {
+            $('#warningMsg').removeClass('d-one');
+            return;
+        }
+
+        $('#warningMsg').addClass('d-one');
+
         let sizeMultiplier = 1;
         if(petSize === 'medium') sizeMultiplier = 1.2;
         if(petSize === 'large') sizeMultiplier = 1.5;
