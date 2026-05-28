@@ -61,5 +61,22 @@ $(document).ready(function() {
     $('#petType, #petSize, input[name="packageRadio"]').on('change', function() {
         calculateTotal();
     });
+
+    $('#btnReset').on('click', function() {
+        
+        $('#petType').val('');
+        
+        
+        $('#petSize').val('').prop('disabled', true);
+        
+        
+        $('input[name="packageRadio"]').prop('checked', false).prop('disabled', true);
+        
+        
+        $('#totalDisplay').text('Rp 0').removeClass('text-success').addClass('text-muted');
+        
+        
+        $('#warningMsg').removeClass('d-none');
+    });
 });
 
