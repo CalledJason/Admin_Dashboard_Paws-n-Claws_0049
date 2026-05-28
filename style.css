@@ -40,6 +40,11 @@
             color: var(--pc-pink) !important;
         }
 
+        .navbar-nav .nav-link.active {
+        color: #ff9b9b !important;
+        font-weight: 700; 
+        }
+
         .pc-shadow{
             box-shadow: 0 15px 35px rgba(0,0,0,0.03);
         }
