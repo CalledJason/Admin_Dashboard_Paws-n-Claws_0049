@@ -79,12 +79,23 @@ $(document).ready(function() {
         $('#warningMsg').removeClass('d-none');
     });
 
-    $('.navbar-nav .nav-link').on('click', function () {
-        
-        $('.navbar-nav .nav-link').removeClass('active');
-        
-        
-        $(this).addClass('active');
+    const sections = $('section, header');
+
+    $(window).on('scroll', function() {
+        let current = '';
+
+        sections.each(function() {
+            const sectionTop = $(this).offset().top - 150;
+            const sectionHeight = $(this).outerHeight();
+
+            if ($(window).scrollTop() >= sectionTop) {
+                current = $(this).attr('id');
+            }
+        });
+
+        $('.navbar-nav .nav-link').each(function () {
+        if ($(this).attr('href') === '#' + current) {
+            $(this).addClass('active');
+        }
     });
 });
-
