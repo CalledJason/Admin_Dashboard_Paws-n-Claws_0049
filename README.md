@@ -45,10 +45,6 @@ reservation booking, professional groomers, and salon facilities.
 🎨 References from Dribbble & Pinterest
 🐾 Adapted for Pet Grooming Business Theme
 📚 Developed independently for academic purposes
-
-Paws & Claws is a modern company profile website designed for a fictional pet grooming salon.
-The website provides information about grooming services, pricing estimates,
-reservation booking, professional groomers, and salon facilities.
 ```
 ---
 ## References
