@@ -55,6 +55,21 @@
         .navbar-nav .nav-link.active {
             color: #ff9b9b !important; 
             font-weight: 700; 
+            position: relative;
+        }
+
+        .navbar-nav .nav-link.active::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -4px;
+            transform: translateX(-50%);
+
+            width: 6px;
+            height: 6px;
+
+            background: var(--pc-pink);
+            border-radius: 50%;
         }
 
         .pc-shadow{
@@ -161,4 +176,8 @@
             padding: 20px;
             font-weight: 600;
             border-radius: 20px !important;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
