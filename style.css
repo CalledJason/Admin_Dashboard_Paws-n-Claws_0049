@@ -31,6 +31,16 @@
             transition: all 0.3s ease;
         }
 
+        .navbar-scrolled {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+
+            box-shadow:
+            0 12px 40px rgba(0,0,0,0.12),
+            inset 0 1px 0 rgba(255,255,255,0.5);
+        }
+
         .nav-link {
             font-weight: 500;
             color: var(--pc-dark) !important;

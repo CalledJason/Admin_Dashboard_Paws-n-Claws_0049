@@ -84,6 +84,12 @@ $(document).ready(function() {
     $(window).on('scroll', function() {
         let current = '';
 
+        if ($(window).scrollTop() > 50){
+            $('.navbar').addClass('navbar-scrolled');
+        } else {
+            $('.navbar').removeClass('navbar-scrolled');
+        }
+
         sections.each(function() {
             const sectionTop = $(this).offset().top - 150;
             const sectionHeight = $(this).outerHeight();
