@@ -47,8 +47,8 @@ include 'db.php';
                         <td><?php echo $no++; ?></td>
                         <td><strong><?php echo $d['nama_owner']; ?></strong></td>
                         <td><?php echo $d['no_whatsapp']; ?></td>
-                        <td><?php echo $d['tanggal_booking']; ?></td>
-                        <td><?php echo $d['catatan']; ?></td>
+                        <td><?php echo $d['tgl_booking']; ?></td>
+                        <td><?php echo $d['note']; ?></td>
                         <td><span class="badge bg-secondary"><?php echo $d['status']; ?></span></td>
                         <td>
                             <a href="edit_reservasi.php?id=<?php echo $d['id']; ?>" class="btn btn-warning btn-sm">Ubah</a>

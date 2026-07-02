@@ -306,6 +306,16 @@
 
     <section id="contact" class="py-5 bg-white">
         <div class="container">
+            <?php if(isset($_GET['pesan'])){
+                        if($_GET['pesan'] == "sukses"){
+                            echo "<div class='alert alert-success'>Antrean berhasil ditambahkan!</div>";
+                        } else if($_GET['pesan'] == "gagal"){
+                            echo "<div class='alert alert-danger'>Gagal! Kolom wajib diisi.</div>";
+                        } else if($_GET['pesan'] == "double"){
+                            echo "<div class='alert alert-warning'>WhatsApp Anda sudah booking di tanggal ini!</div>";
+                        }
+            }?>
+
             <div class="row g-5">
                 <div class="col-lg-5 d-flex flex-column justify-content-center">
                     <h2 class="fw-bold mb-3 fs-1">Kunjungi Salon kami Sekarang</h2>
@@ -334,20 +344,20 @@
                         <h4 class="fw-bold mb-4">Form Reservasi Cepat</h4>
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Nama Lengkap Owner</label>
-                            <input type="text" class="form-control" placeholder="Contoh: Go Younjung" required>
+                            <input type="text" class="form-control" name="nama_owner" placeholder="Contoh: Go Younjung" required>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6 mb-3 mb-md-0">
                             <label class="form-label fw-semibold">No. Whatsapp Aktif</label>
-                                <input type="text" class="form-control" placeholder="08123xxxx" required>
+                                <input type="text" class="form-control" name="no_whatsapp" placeholder="08123xxxx" required>
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label fw-semibold">Pilih Tanggal Booking</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" class="form-control" name="tgl_booking" required>
                             </div>
                             <div class="mb-4">
                                 <label class="form-label fw-semibold">Catatan Khusus (Opsional)</label>
-                                <textarea class="form-control" rows="3" placeholder="Sebutkan jika anabul memiliki alergi air dingin atau kulit sensitif..."></textarea>
+                                <textarea class="form-control" name="note" rows="3" placeholder="Sebutkan jika anabul memiliki alergi air dingin atau kulit sensitif..."></textarea>
                             </div>
                             <button type="submit" class="btn-pc w-100 py-3 fs-5">Kirim Antrean Reservasi</button>
                         </div>
