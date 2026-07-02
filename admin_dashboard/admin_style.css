@@ -153,7 +153,6 @@ body {
 .status-selesai { background-color: #dff0d8; color: #3c763d; }
 .status-dibatalkan { background-color: #f2dede; color: #a94442; }
 
-/* --- Notifikasi Alerts --- */
 .alert {
     border-radius: 20px;
     border: none;

@@ -421,5 +421,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>
+
+    <?php if(isset($_GET['pesan'])): ?>
+        <script>
+            let pesan = "<?= $_GET['pesan']; ?>";
+            if (pesan === "sukses") {
+                alert("&#10024; Sukses! Antrean reservasi Anda berhasil ditambahkan. Silakan cek berkala.");
+            } else if (pesan === "gagal") {
+                alert("&#10060; Gagal! Semua kolom formulir wajib diisi dengan benar.");
+            } else if (pesan === "double") {
+                alert("&#9888; Peringatan! Nomor WhatsApp Anda sudah melakukan booking di tanggal ini.");
+            }
+        </script>
+    <?php endif; ?>
 </body>
 </html>
