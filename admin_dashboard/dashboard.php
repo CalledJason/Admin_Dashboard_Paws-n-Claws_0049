@@ -16,7 +16,7 @@ include 'db.php';
     <link rel="stylesheet" href="admin_style.css">
 </head>
 <body class="bg-light">
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-admin">
     <div class="container">
         <a class="navbar-brand fw-bold" href="#">&#x1F43E;PAWS & CLAWS DASHBOARD</a>
         <a href="logout.php" class="btn btn-danger btn-sm">Keluar</a>
@@ -25,7 +25,7 @@ include 'db.php';
 <div class="container my-5">
     <div class="admin-box">
         <h2 class="fw-bold mb-4">Daftar Antrean Reservasi Masuk</h2>
-        <table class="table table-bordered table-striped align-middle">
+        <table class="table-responsive table-responsive-custom">
             <thead class="table-dark">
                 <tr>
                     <th>No</th>

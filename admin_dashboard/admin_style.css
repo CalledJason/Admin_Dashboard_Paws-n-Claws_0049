@@ -1,0 +1,162 @@
+:root {
+    --pc-pink: #F7A0B8;
+    --pc-peach: #FFDAC1;
+    --pc-cream: #FAE9D7;
+    --pc-dark: #3D3A3A;
+    --pc-blue: #B5E2FA;
+    --global-rounded: 30px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--pc-cream);
+    color: var(--pc-dark);
+    min-height: 100vh;
+}
+
+/* --- Layout Navigasi Admin --- */
+.navbar-admin {
+    background-color: rgba(255, 253, 249, 0.6) !important;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    margin: 0 20px;
+    padding: 15px 0;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-top: none;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.03);
+}
+
+.navbar-admin .navbar-brand {
+    color: var(--pc-dark) !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* --- Box Wrapper Konten --- */
+.admin-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: var(--global-rounded);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+    border: none;
+}
+
+/* --- Form Login Layout --- */
+.body-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 120px;
+}
+
+.box-login {
+    width: 100%;
+    max-width: 420px;
+    background-color: #ffffff;
+    padding: 45px 35px;
+    border-radius: var(--global-rounded);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+/* --- Elemen Form Inputs --- */
+.form-control, .form-select {
+    border-radius: 20px;
+    padding: 12px 20px;
+    border: 1px solid #f0f0f0;
+    background-color: #fafafa;
+    color: var(--pc-dark);
+    font-size: 0.95rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--pc-pink);
+    box-shadow: 0 0 0 0.25rem rgba(247, 160, 184, 0.25);
+    background-color: #ffffff;
+}
+
+/* --- Gaya Tabel Data Antrean --- */
+.table-responsive-custom {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+}
+
+.table-custom {
+    margin-bottom: 0;
+}
+
+.table-custom thead {
+    background-color: var(--pc-peach);
+}
+
+.table-custom th {
+    color: var(--pc-dark);
+    font-weight: 600;
+    padding: 15px 20px;
+    border: none;
+}
+
+.table-custom td {
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+/* --- Desain Tombol Kustom --- */
+.btn-pc {
+    background-color: var(--pc-pink);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 50px;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 18px rgba(247, 160, 184, 0.3);
+}
+
+.btn-pc:hover {
+    background-color: #f58ba7;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(247, 160, 184, 0.4);
+}
+
+.btn-pc-dark {
+    background-color: var(--pc-dark);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 50px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-pc-dark:hover {
+    background-color: #2b2929;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* --- Badges Status Antrean --- */
+.badge-status {
+    padding: 8px 14px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.status-pending { background-color: #fef5d1; color: #8a6d3b; }
+.status-diterima { background-color: #d9edf7; color: #31708f; }
+.status-selesai { background-color: #dff0d8; color: #3c763d; }
+.status-dibatalkan { background-color: #f2dede; color: #a94442; }
+
+/* --- Notifikasi Alerts --- */
+.alert {
+    border-radius: 20px;
+    border: none;
+    padding: 15px 20px;
+    font-size: 0.95rem;
+}
