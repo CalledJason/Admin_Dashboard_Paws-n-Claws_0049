@@ -19,47 +19,69 @@ include 'db.php';
     <nav class="navbar navbar-expand-lg navbar-admin">
     <div class="container">
         <a class="navbar-brand fw-bold" href="#">&#x1F43E;PAWS & CLAWS DASHBOARD</a>
-        <a href="logout.php" class="btn btn-danger btn-sm">Keluar</a>
+        <a href="logout.php" class="btn btn-danger btn-sm rounded-pill px-3">Keluar</a>
     </div>
 </nav>
 <div class="container my-5">
     <div class="admin-box">
         <h2 class="fw-bold mb-4">Daftar Antrean Reservasi Masuk</h2>
-        <table class="table-responsive table-responsive-custom">
-            <thead class="table-dark">
-                <tr>
-                    <th>No</th>
-                    <th>Nama Pemilik</th>
-                    <th>No. WhatsApp</th>
-                    <th>Tanggal Janji</th>
-                    <th>Catatan</th>
-                    <th>Status</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php 
-                $no = 1;
-                $data = mysqli_query($conn, "SELECT * FROM reservasi");
-                while($d = mysqli_fetch_array($data)){
+        
+        <div class="table-responsive table-responsive-custom">
+            <table class="table table-custom align-middle text-center">
+                <thead>
+                    <tr>
+                        <th style="width: 5%">No</th>
+                        <th>Nama Pemilik</th>
+                        <th>No. WhatsApp</th>
+                        <th>Tanggal Janji</th>
+                        <th>Keterangan / Catatan</th>
+                        <th>Status</th>
+                        <th style="width: 20%">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                    $no = 1;
+                    // Mengambil data terupdate dari database
+                    $data = mysqli_query($conn, "SELECT * FROM reservasi ORDER BY id DESC");
+                    while($d = mysqli_fetch_array($data)){
+                        
+                        // Logika pembagian warna status berdasarkan input database
+                        $status_text = strtolower($d['status']);
+                        $badge_class = "";
+
+                        if($status_text == "pending") {
+                            $badge_class = "status-pending"; // Kuning
+                        } else if($status_text == "diterima") {
+                            $badge_class = "status-diterima"; // Biru
+                        } else if($status_text == "sukses" || $status_text == "selesai") {
+                            $badge_class = "status-selesai"; // Hijau
+                        } else if($status_text == "dibatalkan") {
+                            $badge_class = "status-dibatalkan"; // Merah
+                        }
                     ?>
                     <tr>
                         <td><?php echo $no++; ?></td>
-                        <td><strong><?php echo $d['nama_owner']; ?></strong></td>
-                        <td><?php echo $d['no_whatsapp']; ?></td>
-                        <td><?php echo $d['tgl_booking']; ?></td>
-                        <td><?php echo $d['note']; ?></td>
-                        <td><span class="badge bg-secondary"><?php echo $d['status']; ?></span></td>
+                        <td><strong><?php echo htmlspecialchars($d['nama_owner']); ?></strong></td>
+                        <td><?php echo htmlspecialchars($d['no_whatsapp']); ?></td>
+                        <td><?php echo date('d-m-Y', strtotime($d['tgl_booking'])); ?></td>
+                        <td class="text-muted"><em><?php echo htmlspecialchars($d['note'] ? $d['note'] : '-'); ?></em></td>
                         <td>
-                            <a href="edit_reservasi.php?id=<?php echo $d['id']; ?>" class="btn btn-warning btn-sm">Ubah</a>
-                            <a href="hapus_reservasi.php?id=<?php echo $d['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Hapus data ini?')">Hapus</a>
+                            <span class="badge-status <?php echo $badge_class; ?>">
+                                <?php echo ucfirst($d['status']); ?>
+                            </span>
+                        </td>
+                        <td>
+                            <a href="edit_reservasi.php?id=<?php echo $d['id']; ?>" class="btn btn-warning btn-sm rounded-pill px-3 fw-semibold me-1">Ubah</a>
+                            <a href="hapus_reservasi.php?id=<?php echo $d['id']; ?>" class="btn btn-danger btn-sm rounded-pill px-3 fw-semibold" onclick="return confirm('Yakin ingin menghapus antrean ini?')">Hapus</a>
                         </td>
                     </tr>
                     <?php 
-                }
-                ?>
-            </tbody>
-        </table>
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 </body>
