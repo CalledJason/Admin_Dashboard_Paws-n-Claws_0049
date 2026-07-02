@@ -340,7 +340,7 @@
                     </div>
                 </div>
                 <div class="col-lg-7">
-                    <form class="card pc-card pc-shadow p-5 border-0 bg-light" id="bookingForm">
+                    <form class="card pc-card pc-shadow p-5 border-0 bg-light" action="proses_reservasi.php" method="POST">
                         <h4 class="fw-bold mb-4">Form Reservasi Cepat</h4>
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Nama Lengkap Owner</label>
@@ -353,7 +353,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label fw-semibold">Pilih Tanggal Booking</label>
-                                <input type="text" class="form-control" name="tgl_booking" required>
+                                <input type="date" class="form-control" name="tgl_booking" required>
                             </div>
                             <div class="mb-4">
                                 <label class="form-label fw-semibold">Catatan Khusus (Opsional)</label>
