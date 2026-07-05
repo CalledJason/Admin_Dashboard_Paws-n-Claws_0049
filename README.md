@@ -14,29 +14,15 @@ reservation booking, professional groomers, and salon facilities.
 ```
 ---
 # 📸 Screenshots
-### Home Page
-![Home Page](assets/Home.png)
+### Login Admin
+![Home Page](assets/Login_admin.png)
 ---
-### Tentang
-![Home Page](assets/Tentang.png)
+### Dashboard admin
+![Home Page](assets/Dashboard_admin.png)
 ---
-### Layanan
-![Home Page](assets/Layanan.png)
+### Edit Status Antrian
+![Home Page](assets/Edit_status_antrian_admin.png)
 ---
-### Tarif
-![Home Page](assets/Tarif.png)
----
-### Galeri
-![Home Page](assets/Gallery.png)
----
-### Groomers
-![Home Page](assets/Groomers.png)
----
-### FAQ
-![Home Page](assets/FAQ.png)
----
-### Footers
-![Home Page](assets/Footer.png)
 ---
 
 ## 🎨 Design Inspiration
