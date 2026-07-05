@@ -21,7 +21,7 @@ reservation booking, professional groomers, and salon facilities.
 ![Home Page](assets/Dashboard_admin.png)
 ---
 ### Edit Status Antrian
-![Home Page](assets/Edit_status_antrian_admin.png)
+![Home Page](assets/Edit_status_antrian.png)
 ---
 ---
 
