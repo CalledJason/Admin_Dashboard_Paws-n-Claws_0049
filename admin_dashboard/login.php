@@ -30,7 +30,7 @@ if(isset($_POST['login'])){
 </head>
 <body class="body-login">
 <div class="box-login">
-    <h3 class="text-center fw-bold mb-4">LOGIN ADMIN PAWS&CLAWS</h3>
+    <h3 class="text-center fw-bold mb-4">LOGIN ADMIN PAWS & CLAWS</h3>
     
     <?php 
     if(isset($_GET['pesan'])){
